@@ -45,7 +45,7 @@ class _ProductListScreenState extends State<ProductListScreen> {
   }
 
   Widget _buildGrid(List<ProductEntity> products) {
-    return GridView.builder(
+    return GridView.builder( 
       padding: const EdgeInsets.all(12),
       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 2,
