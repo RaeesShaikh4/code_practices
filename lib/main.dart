@@ -3,22 +3,24 @@ import 'package:hive_flutter/hive_flutter.dart';
 import 'package:inetrview_code_practices/cubit/cubit_main.dart';
 import 'package:inetrview_code_practices/flutter_hooks/flutter_hooks_practice.dart';
 import 'package:inetrview_code_practices/native_code/services/platform_service.dart';
+import 'package:inetrview_code_practices/rx_dart/rx_app.dart';
 import 'package:inetrview_code_practices/sqf_life/database/database_helper.dart';
 import 'package:inetrview_code_practices/sqf_life/screens/profile_screen.dart';
 
 import 'scratch/di/injection_container.dart';
-import 'scratch/main.dart';
+import 'scratch/presentation/screens/product_list_screen.dart'; 
 
 void main() async {
   // runApp(const MyApp());
   // runApp(const CubitMain());
   // runApp(const ShopEase());
   // runApp(const FlutterHooksPractice());
+  // runApp(const ProfileApp());
   
   WidgetsFlutterBinding.ensureInitialized();
   await initDependencies();
-  await DatabaseHelper.instance.database;
-  runApp(const ProfileApp());
+  // await DatabaseHelper.instance.database;
+  runApp(const RxDartApp());
 
 }
 

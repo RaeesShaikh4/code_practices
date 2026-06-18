@@ -1,11 +1,41 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:inetrview_code_practices/scratch/di/injection_container.dart';
 import 'package:provider/provider.dart';
 import 'package:shimmer/shimmer.dart';
 
 import '../../domain/entities/product_entity.dart';
 import '../providers/product_provider.dart';
 import 'product_detail_screen.dart';
+
+
+import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+ 
+
+
+class ShopEase extends StatelessWidget {
+  const ShopEase({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (_) => sl<ProductProvider>()),
+      ],
+      child: MaterialApp(
+        title: 'ShopEase',
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData(
+          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+          useMaterial3: true,
+        ),
+        home: const ProductListScreen(),
+      ),
+    );
+  }
+}
+
 
 class ProductListScreen extends StatefulWidget {
   const ProductListScreen({super.key});

@@ -7,7 +7,7 @@ class ProductModel {
   final double price;
   final String description;
   final String category;
-  final String image;
+  final String image; 
   final double ratingRate;
   final int ratingCount;
 
